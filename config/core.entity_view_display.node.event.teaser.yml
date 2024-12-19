@@ -2,32 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.field.node.event.field_content
     - field.field.node.event.field_event_date
     - field.field.node.event.field_media
     - field.field.node.event.field_summary_text
-    - image.style.full_size
+    - image.style.teaser
     - node.type.event
   module:
     - datetime
-    - layout_paragraphs
     - media
     - nomarkup
+    - text
     - user
-id: node.event.default
+id: node.event.teaser
 targetEntityType: node
 bundle: event
-mode: default
+mode: teaser
 content:
-  field_content:
-    type: layout_paragraphs
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_event_date:
     type: datetime_default
     label: hidden
@@ -35,14 +27,14 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_media:
     type: media_thumbnail
     label: hidden
     settings:
       image_link: ''
-      image_style: full_size
+      image_style: teaser
       image_loading:
         attribute: lazy
     third_party_settings:
@@ -50,12 +42,15 @@ content:
         enabled: false
         separator: '|'
         referenced_entity: ''
-    weight: 1
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
     weight: 0
     region: content
+  field_summary_text:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
 hidden:
-  field_summary_text: true
+  field_content: true
+  links: true
