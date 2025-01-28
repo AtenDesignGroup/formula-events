@@ -1,6 +1,6 @@
 {
-    "name": "aten/formula-news",
-    "description": "Recipe for news.",
+    "name": "aten/formula-events",
+    "description": "Recipe for events.",
     "type": "drupal-recipe",
     "license": "GPL-2.0-or-later",
     "authors": [
